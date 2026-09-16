@@ -1,0 +1,9 @@
+{
+  "entity_id": "obj_cam1_99",
+  "zone_id": "zona_segura_01",
+  "transition": {
+    "type": "entrada",
+    "timestamp": "2026-09-16T10:48:00.000Z"
+  },
+  "current_zone_occupancy": 1
+}

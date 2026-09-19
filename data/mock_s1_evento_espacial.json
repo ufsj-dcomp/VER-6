@@ -1,9 +1,34 @@
-{
-  "entity_id": "obj_cam1_99",
-  "zone_id": "zona_segura_01",
-  "transition": {
-    "type": "entrada",
-    "timestamp": "2026-09-16T10:48:00.000Z"
+[
+  {
+    "entity_id": "pessoa_01",
+    "zone_id": "zona_segura_01",
+    "transition": {
+      "type": "entrada",
+      "timestamp": "2026-09-16T10:00:00.000Z"
+    }
   },
-  "current_zone_occupancy": 1
-}
+  {
+    "entity_id": "pessoa_01",
+    "zone_id": "zona_segura_01",
+    "transition": {
+      "type": "saida",
+      "timestamp": "2026-09-16T10:00:00.100Z"
+    }
+  },
+  {
+    "entity_id": "carro_99",
+    "zone_id": "zona_proibida",
+    "transition": {
+      "type": "entrada",
+      "timestamp": "2026-09-16T10:00:00.200Z"
+    }
+  },
+  {
+    "entity_id": "pessoa_01",
+    "zone_id": "zona_segura_01",
+    "transition": {
+      "type": "entrada",
+      "timestamp": "2026-09-16T10:00:01.500Z"
+    }
+  }
+]

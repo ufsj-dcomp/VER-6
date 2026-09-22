@@ -13,11 +13,11 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from s1.geometry import ZoneResolver
-from s1.loaders import load_trajectory, load_zones
-from s1.service import S1Service
+from components.S1.geometry import ZoneResolver
+from components.S1.loaders import load_trajectory, load_zones
+from components.S1.service import S1Service
 
-DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
 
 
 def main() -> None:

@@ -22,13 +22,16 @@ class CamadaS2:
 
 if __name__ == "__main__":
     # Inicializa o motor S2
-    s2 = CamadaS2()
+    #s2 = CamadaS2()
 
     # Caminhos para os ficheiros baseados na árvore do repositório Git
-    caminho_eventos_s1 = "data/mock_s1_evento_espacial.json"
+    caminho_eventos_s1 = "data/output_s1/eventos_s2_demo.json"
     caminho_eventos_fusao = "data/fusao_deduplicacao.json"
 
     def executar_teste_com_ficheiro(caminho_ficheiro):
+        # Inicializa o motor S2
+        s2 = CamadaS2() 
+
         if os.path.exists(caminho_ficheiro):
             print(f"\n=== A iniciar leitura do ficheiro: {caminho_ficheiro} ===")
             
@@ -49,9 +52,13 @@ if __name__ == "__main__":
                     
                 ts_ms = 0
                 if ts_str:
-                    # Converte ISO-8601 para timestamp em milissegundos
-                    dt = datetime.strptime(ts_str, "%Y-%m-%dT%H:%M:%S.%fZ")
-                    ts_ms = int(dt.timestamp() * 1000)
+                    if isinstance(ts_str, int):
+                        # Se já for um número inteiro (milissegundos), usa diretamente
+                        ts_ms = ts_str
+                    elif isinstance(ts_str, str):
+                        # Se for texto (ISO-8601), converte para milissegundos
+                        dt = datetime.strptime(ts_str, "%Y-%m-%dT%H:%M:%S.%fZ")
+                        ts_ms = int(dt.timestamp() * 1000)
                     
                 # Pega coordenadas diretas ou de dentro de 'world_coordinates' (Mock Fusão)
                 coords = ev.get("world_coordinates", {})

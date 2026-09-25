@@ -1,0 +1,26 @@
+[
+  {
+    "entity_id": "pessoa_01",
+    "zone_id": "zona_segura_01",
+    "transition": {
+      "type": "entrada",
+      "timestamp": "2026-09-16T10:00:00.200Z"
+    }
+  },
+  {
+    "entity_id": "carro_99",
+    "zone_id": "zona_proibida_01",
+    "transition": {
+      "type": "entrada",
+      "timestamp": "2026-09-16T10:00:00.500Z"
+    }
+  },
+  {
+    "entity_id": "pessoa_01",
+    "zone_id": "zona_segura_01",
+    "transition": {
+      "type": "saida",
+      "timestamp": "2026-09-16T10:00:01.100Z"
+    }
+  }
+]
